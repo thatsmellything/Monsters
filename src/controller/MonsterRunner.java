@@ -1,11 +1,11 @@
 package controller;
 
-public class MonstersRunner
+public class MonsterRunner
 {
 
 	public static void main(String [] args)
 	{
-		MonstersController app = new MonstersController();
+		MonsterController app = new MonsterController();
 		app.start();
 	}
 }
