@@ -37,6 +37,59 @@ public class MarshmallowMonster
 		this.armCount = armCount;
 	}
 	
+	//Getters
+	
+	public String getName()
+	{
+		return name; //return is the automatic end point of the method. Return exits the method no turning back
+	}
+	
+	public double getLegCount() 
+	{
+		return legCount;
+	}
+	
+	public int getEyeCount()
+	{
+		return eyeCount;
+	}
+	
+	public boolean getHasNoses()
+	{
+		return hasNoses;
+	}
+	
+	public int getArmCount()
+	{
+		return armCount;
+	}
+	
+	//Setters
+	
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+	
+	public void setlegCount(double legs)
+	{
+		this.legCount =legs;
+	}
+	
+	public void setEyeCount(int eyes)
+	{
+		this.eyeCount=eyes;
+	}
+	
+	public void setHasNoses(boolean hasNose)
+	{
+		this.hasNoses = hasNose;
+	}
+	
+	public void setArmCount(int arms)
+	{
+		this.armCount = arms;
+	}
 	
 	
 	public String toString()
