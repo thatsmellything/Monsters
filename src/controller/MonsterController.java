@@ -1,5 +1,5 @@
 package controller;
-
+import java.util.Scanner;
 
 
 
@@ -12,18 +12,38 @@ public class MonsterController
 	private MarshmallowMonster myMonster;
 		//java doesnt know the type aka what it is. NEVER USE AUTOFIX! You must add an import to get the red 
 		//ring of death to go away.
-	
+	private MarshmallowMonster userMonster;
 	//--------Constructor section---------
 	public MonsterController()
 		//Still same name as class
 	{
-			//Job 1: initialize data members
 		myMonster = new MarshmallowMonster("Boog", 4.0, 3, true, 4);
+		Scanner userThings = new Scanner(System.in);
+		System.out.println("What is the name of your monster");
+		String a = userThings.nextLine();
+		System.out.println("How may legs?");
+		double b = userThings.nextDouble();
+		System.out.println("How many eyes?");
+		int c = userThings.nextInt();
+		System.out.println("Does it have a nose?");
+		boolean d = userThings.nextBoolean();
+		System.out.println("How many arms?");
+		int e = userThings.nextInt();
+
+			//Job 1: initialize data members
+		userMonster = new MarshmallowMonster(a , b, c, d, e);
+		userThings.close();
+			//Make a new instance by calling the constructor
 	}
 	//--------Methods section------------
 	public void start()
 	{
 		System.out.println(myMonster);
-	
+		myMonster.setArmCount(9999);
+		System.out.println("My monster has " + myMonster.getArmCount() + " arms!");
+
+		System.out.println(userMonster);
+		
+		
 	}
 }
