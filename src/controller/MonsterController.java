@@ -1,11 +1,12 @@
 package controller;
 import java.util.Scanner;
-
+import javax.swing.JOptionPane;
 
 
 import model.MarshmallowMonster;
 		//This is the same thing as importing the scanner. Controller can cross lanes and go into the other
 		//packages but other packages cant go into controller.
+
 public class MonsterController
 {
 	//--------Data member section---------
@@ -14,7 +15,7 @@ public class MonsterController
 		//ring of death to go away.
 	private MarshmallowMonster userMonster;
 	//--------Constructor section---------
-	public MonsterController()
+	//public MonsterController()
 		//Still same name as class
 	{
 		myMonster = new MarshmallowMonster("Boog", 4.0, 3, true, 4);
@@ -38,9 +39,16 @@ public class MonsterController
 	//--------Methods section------------
 	public void start()
 	{
-		System.out.println(myMonster);
+		//--------JOptionPane-----
+		JOptionPane.showMessageDialog(null, "Show message here :D()");
+		//Use this method instead of System.out.println("words");
+		JOptionPane.showMessageDialog(null, myMonster);
+		// backslash n (\n) breaks the line on the java window
+		
+		//System.out.println(myMonster);
 		myMonster.setArmCount(9999);
-		System.out.println("My monster has " + myMonster.getArmCount() + " arms!");
+		JOptionPane.showMessageDialog(null, "My Monster has" + myMonster.getArmCount() + " arms!");
+		//System.out.println("My monster has " + myMonster.getArmCount() + " arms!");
 
 		System.out.println(userMonster);
 		
