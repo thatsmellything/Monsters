@@ -19,26 +19,26 @@ public class MonsterController
 		//Still same name as class
 	{
 		myMonster = new MarshmallowMonster("Boog", 4.0, 3, true, 4);
-		Scanner userThings = new Scanner(System.in);
+		//Scanner userThings = new Scanner(System.in);
 		//System.out.println("What is the name of your monster");
-		String a = JOptionPane.showInputDialog(null,"What is the name of your monster?");
+//		String a = JOptionPane.showInputDialog(null,"What is the name of your monster?");
 		//String a = userThings.nextLine();
 		//System.out.println("How may legs?");
-		double b = JOptionPane.showInputDialog(null,"How may legs?");
+//		double b = JOptionPane.showInputDialog(null,"How may legs?");
 		//double b = userThings.nextDouble();
 		//System.out.println("How many eyes?");
-		int c = JOptionPane.showInputDialog(null,"How many eyes?");
+//		int c = JOptionPane.showInputDialog(null,"How many eyes?");
 		//int c = userThings.nextInt();
 		//System.out.println("Does it have a nose?");
-		boolean d = JOptionPane.showInputDialog(null,"Does it have a nose?");
+//		boolean d = JOptionPane.showInputDialog(null,"Does it have a nose?");
 		//boolean d = userThings.nextBoolean();
 		//System.out.println("How many arms?");
-		int e = JOptionPane.showInputDialog(null, "How many arms?");
+//		int e = JOptionPane.showInputDialog(null, "How many arms?");
 		//int e = userThings.nextInt();
 
 			//Job 1: initialize data members
-		userMonster = new MarshmallowMonster(a , b, c, d, e);
-		userThings.close();
+//		userMonster = new MarshmallowMonster(a , b, c, d, e);
+		//userThings.close();
 			//Make a new instance by calling the constructor
 	}
 	//--------Methods section------------
@@ -50,14 +50,39 @@ public class MonsterController
 		JOptionPane.showMessageDialog(null, myMonster);
 		// backslash n (\n) breaks the line on the java window
 		
-		System.out.println(myMonster);
+		//System.out.println(myMonster);
 		myMonster.setArmCount(9999);
 		
 		JOptionPane.showMessageDialog(null, "My Monster has" + myMonster.getArmCount() + " arms!");
-		System.out.println("My monster has " + myMonster.getArmCount() + " arms!");
+		//System.out.println("My monster has " + myMonster.getArmCount() + " arms!");
+		
+		
+		JOptionPane.showMessageDialog(null, "Lets make you a monster!");
+		String userMonsterName = JOptionPane.showInputDialog(null,"What is the name of your monster?");
+		userMonster.setName(userMonsterName);
+		String legCount = JOptionPane.showInputDialog(null,"How may legs?");
+		if (validDouble(legCount))
+		{
+			double legs = Double.parseDouble(legCount);
+		userMonster.setlegCount(legCount);
+		}
+		String userNumberEyes = JOptionPane.showInputDialog(null,"How many eyes?");
+		if (validInt(userNumberEyes))
+		{
+			int arms = Integer.parseInt(userNumberEyes);
+			userMonster.setArmCount(userNumberEyes);
+		}
+		boolean d = JOptionPane.showInputDialog(null,"Does it have a nose?");
+		String userNumberArms = JOptionPane.showInputDialog(null, "How many arms?");
+		if (validInt(userNumberArms))
+		{
+			int arms = Integer.parseInt(userNumberArms);
+			userMonster.setArmCount(arms);
+		}
+		userMonster = new MarshmallowMonster(userMonsterName , HasNose, userNumberEyes, d, legCount);
 		
 		JOptionPane.showMessageDialog(null, userMonster);
-		System.out.println(userMonster);
+		//System.out.println(userMonster);
 		
 		
 	}
