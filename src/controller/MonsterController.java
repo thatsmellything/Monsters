@@ -64,7 +64,7 @@ public class MonsterController
 		if (validDouble(legCount))
 		{
 			double legs = Double.parseDouble(legCount);
-		userMonster.setlegCount(legCount);
+		userMonster.setLegCount(Double.parseDouble(userLegCount);
 		}
 		String userNumberEyes = JOptionPane.showInputDialog(null,"How many eyes?");
 		if (validInt(userNumberEyes))
@@ -72,14 +72,18 @@ public class MonsterController
 			int arms = Integer.parseInt(userNumberEyes);
 			userMonster.setArmCount(userNumberEyes);
 		}
-		boolean d = JOptionPane.showInputDialog(null,"Does it have a nose?");
+		boolean hasNoses = JOptionPane.showInputDialog(null,"Does it have a nose?");
+		while (!validBool(hasNoses))
+		{
+			hasNoses = JOptionPane.showInputDialog(null, "No! type in a boolean value dummy");
+		}
 		String userNumberArms = JOptionPane.showInputDialog(null, "How many arms?");
 		if (validInt(userNumberArms))
 		{
 			int arms = Integer.parseInt(userNumberArms);
 			userMonster.setArmCount(arms);
 		}
-		userMonster = new MarshmallowMonster(userMonsterName , HasNose, userNumberEyes, d, legCount);
+		userMonster = new MarshmallowMonster(userMonsterName , hasNoses, userNumberEyes, d, legCount);
 		
 		JOptionPane.showMessageDialog(null, userMonster);
 		//System.out.println(userMonster);
@@ -102,7 +106,6 @@ public class MonsterController
 		}
 		return isValid;
 	}
-	
 	public boolean validDouble(String maybeDouble)
 	{
 		boolean isValid= false;
@@ -115,6 +118,20 @@ public class MonsterController
 		catch(NumberFormatException error)
 		{
 			JOptionPane.showMessageDialog(null, "You should type a double value aka a decimal point boi");
+		}
+		return isValid;
+	}
+	public boolean validBool(String maybeBool)
+	{
+		boolean isValid = false;
+		try
+		{
+			Boolean.parseBoolean(maybeBool);
+			isValid = true;
+		}
+		catch(IllegalArgumentException error)
+		{
+			JOptionPane.showMessageDialog(null, "Type in a boolean value IE treu or false ");
 		}
 		return isValid;
 	}
